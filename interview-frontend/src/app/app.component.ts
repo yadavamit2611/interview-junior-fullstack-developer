@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'interview-frontend';
+  title = 'City Finder';
+  searchQuery: string = '';
+  cities: any[] = [];
+
+  constructor(private http: HttpClient){
+  }
+ 
+  searchCities() {
+    this.http
+      .get<any[]>(`api/cities?query=${this.searchQuery}`)
+      .subscribe((response:string[]) => {
+        this.cities = response;
+      });
+  }
 }
