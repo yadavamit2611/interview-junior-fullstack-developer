@@ -3,10 +3,11 @@
     <div class="logo">{{title}}</div>
   </header>
   <section class="content">
+    <span>interview-frontend app is running!</span>
       <form>
-        <input type="text" placeholder="Filter by city" [(ngModel)]="searchQuery" name="berlin" (input)="searchCities()">
+        <input type="text" placeholder="Filter by city" [(ngModel)]="searchQuery" name="city" (input)="searchCities($event)">
       </form>
-      <ul class="cityList">
+      <ul class="results">
           <li *ngFor="let city of cities">{{ city.cityName }}</li>
       </ul>
   </section>

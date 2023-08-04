@@ -17,17 +17,14 @@
     padding: var(--content-padding);
   }
 
-.cityList {
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
   .results {
     display: grid;
     column-gap: 14px;
+    font-size: larger;
     row-gap: 14px;
     grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
     margin-top: 50px;
+    margin-left: 10px;
     justify-content: space-around;
   }
 
@@ -37,7 +34,7 @@
     border-radius: 8px;
     margin-right: 4px;
     display: inline-block;
-    width: 30%;
+    width: 40%;
   }
   
   button {
@@ -50,10 +47,7 @@
   @media (min-width: 500px) and (max-width: 768px) {
     .results {
         grid-template-columns: repeat(2, 1fr);
-    }
-    input[type="text"] {
-        width: 70%;
-    }   
+    }  
   }
   
   @media (max-width: 499px) {
